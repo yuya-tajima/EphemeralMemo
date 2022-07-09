@@ -14,9 +14,13 @@
 		21251433286D055F0022B78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21251432286D055F0022B78D /* Assets.xcassets */; };
 		21251436286D055F0022B78D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21251434286D055F0022B78D /* LaunchScreen.storyboard */; };
 		21B31100286FB9D400699597 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B310FF286FB9D400699597 /* InputViewController.swift */; };
+		21B311022873A1B000699597 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B311012873A1B000699597 /* Memo.swift */; };
+		21B3110828790E0E00699597 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B3110728790E0E00699597 /* EditViewController.swift */; };
+		BA5D89C3EAD4FF6DCF80BC10 /* Pods_EphemeralMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 193C3FFD398C9D893C454171 /* Pods_EphemeralMemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		193C3FFD398C9D893C454171 /* Pods_EphemeralMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EphemeralMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21251426286D055E0022B78D /* EphemeralMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EphemeralMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21251429286D055E0022B78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2125142B286D055E0022B78D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +30,10 @@
 		21251435286D055F0022B78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21251437286D055F0022B78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21B310FF286FB9D400699597 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		21B311012873A1B000699597 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		21B3110728790E0E00699597 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		88B22F7C68868A20248C457B /* Pods-EphemeralMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EphemeralMemo.release.xcconfig"; path = "Target Support Files/Pods-EphemeralMemo/Pods-EphemeralMemo.release.xcconfig"; sourceTree = "<group>"; };
+		8CDF7CDAC202AE135699D657 /* Pods-EphemeralMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EphemeralMemo.debug.xcconfig"; path = "Target Support Files/Pods-EphemeralMemo/Pods-EphemeralMemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA5D89C3EAD4FF6DCF80BC10 /* Pods_EphemeralMemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +53,8 @@
 			children = (
 				21251428286D055E0022B78D /* EphemeralMemo */,
 				21251427286D055E0022B78D /* Products */,
+				502B3160CB842EC2BA53C58E /* Pods */,
+				919686B7B846AB819A7377DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,12 +73,31 @@
 				2125142B286D055E0022B78D /* SceneDelegate.swift */,
 				2125142D286D055E0022B78D /* ListViewController.swift */,
 				21B310FF286FB9D400699597 /* InputViewController.swift */,
+				21B3110728790E0E00699597 /* EditViewController.swift */,
 				2125142F286D055E0022B78D /* Main.storyboard */,
+				21B311012873A1B000699597 /* Memo.swift */,
 				21251432286D055F0022B78D /* Assets.xcassets */,
 				21251434286D055F0022B78D /* LaunchScreen.storyboard */,
 				21251437286D055F0022B78D /* Info.plist */,
 			);
 			path = EphemeralMemo;
+			sourceTree = "<group>";
+		};
+		502B3160CB842EC2BA53C58E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CDF7CDAC202AE135699D657 /* Pods-EphemeralMemo.debug.xcconfig */,
+				88B22F7C68868A20248C457B /* Pods-EphemeralMemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		919686B7B846AB819A7377DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				193C3FFD398C9D893C454171 /* Pods_EphemeralMemo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2125143A286D055F0022B78D /* Build configuration list for PBXNativeTarget "EphemeralMemo" */;
 			buildPhases = (
+				545008D45B9AAF6EF566B270 /* [CP] Check Pods Manifest.lock */,
 				21251422286D055E0022B78D /* Sources */,
 				21251423286D055E0022B78D /* Frameworks */,
 				21251424286D055E0022B78D /* Resources */,
+				8B10A221086389DC79431C24 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +168,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		545008D45B9AAF6EF566B270 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EphemeralMemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B10A221086389DC79431C24 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EphemeralMemo/Pods-EphemeralMemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EphemeralMemo/Pods-EphemeralMemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EphemeralMemo/Pods-EphemeralMemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		21251422286D055E0022B78D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -143,8 +217,10 @@
 			files = (
 				2125142E286D055E0022B78D /* ListViewController.swift in Sources */,
 				2125142A286D055E0022B78D /* AppDelegate.swift in Sources */,
+				21B3110828790E0E00699597 /* EditViewController.swift in Sources */,
 				2125142C286D055E0022B78D /* SceneDelegate.swift in Sources */,
 				21B31100286FB9D400699597 /* InputViewController.swift in Sources */,
+				21B311022873A1B000699597 /* Memo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +364,7 @@
 		};
 		2125143B286D055F0022B78D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CDF7CDAC202AE135699D657 /* Pods-EphemeralMemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -317,6 +394,7 @@
 		};
 		2125143C286D055F0022B78D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88B22F7C68868A20248C457B /* Pods-EphemeralMemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

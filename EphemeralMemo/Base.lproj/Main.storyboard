@@ -17,22 +17,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="wdr-EZ-rxj" style="IBUITableViewCellStyleDefault" id="TSI-0k-9yV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="TSI-0k-9yV">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TSI-0k-9yV" id="GDA-8m-X7m">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wdr-EZ-rxj">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ecG-yK-awO" kind="presentation" identifier="cellSegue" modalPresentationStyle="automatic" id="Hc2-NZ-Z4M"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -43,6 +37,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7033.3333333333339" y="83.705357142857139"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="8qr-tN-WS5">
+            <objects>
+                <viewController id="ecG-yK-awO" customClass="EditViewController" customModule="EphemeralMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Of-fI-E7i">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4fu-c6-alC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eiY-2S-oGO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4fu-c6-alC" firstAttribute="leading" secondItem="eiY-2S-oGO" secondAttribute="leading" id="1Zv-ip-OVx"/>
+                            <constraint firstItem="eiY-2S-oGO" firstAttribute="bottom" secondItem="4fu-c6-alC" secondAttribute="bottom" id="GQV-Cz-ZYZ"/>
+                            <constraint firstItem="eiY-2S-oGO" firstAttribute="trailing" secondItem="4fu-c6-alC" secondAttribute="trailing" id="hin-rl-diK"/>
+                            <constraint firstItem="4fu-c6-alC" firstAttribute="top" secondItem="eiY-2S-oGO" secondAttribute="top" id="xTT-5P-1fN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hwx-IY-4uX"/>
+                    <connections>
+                        <outlet property="textField" destination="4fu-c6-alC" id="iSG-W3-hpB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1MO-CE-iB2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7812" y="84"/>
         </scene>
         <!--Input View Controller-->
         <scene sceneID="kYf-4B-Ziz">
