@@ -23,12 +23,11 @@
 		21B31114287A663800699597 /* CreateMemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B31113287A663800699597 /* CreateMemoModel.swift */; };
 		21B31116287A74D300699597 /* EditMemoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B31115287A74D300699597 /* EditMemoPresenter.swift */; };
 		21B31118287A754600699597 /* EditMemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B31117287A754600699597 /* EditMemoModel.swift */; };
-		BA5D89C3EAD4FF6DCF80BC10 /* Pods_EphemeralMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 193C3FFD398C9D893C454171 /* Pods_EphemeralMemo.framework */; };
+		3AD8E5419E02730EE409470D /* Pods_SwipeMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68BCA38EC342CD6983BAE59F /* Pods_SwipeMemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		193C3FFD398C9D893C454171 /* Pods_EphemeralMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EphemeralMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		21251426286D055E0022B78D /* EphemeralMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EphemeralMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21251426286D055E0022B78D /* SwipeMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwipeMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21251429286D055E0022B78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2125142B286D055E0022B78D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2125142D286D055E0022B78D /* ListMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMemoViewController.swift; sourceTree = "<group>"; };
@@ -46,8 +45,11 @@
 		21B31113287A663800699597 /* CreateMemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMemoModel.swift; sourceTree = "<group>"; };
 		21B31115287A74D300699597 /* EditMemoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemoPresenter.swift; sourceTree = "<group>"; };
 		21B31117287A754600699597 /* EditMemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemoModel.swift; sourceTree = "<group>"; };
+		68BCA38EC342CD6983BAE59F /* Pods_SwipeMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwipeMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B22F7C68868A20248C457B /* Pods-EphemeralMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EphemeralMemo.release.xcconfig"; path = "Target Support Files/Pods-EphemeralMemo/Pods-EphemeralMemo.release.xcconfig"; sourceTree = "<group>"; };
 		8CDF7CDAC202AE135699D657 /* Pods-EphemeralMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EphemeralMemo.debug.xcconfig"; path = "Target Support Files/Pods-EphemeralMemo/Pods-EphemeralMemo.debug.xcconfig"; sourceTree = "<group>"; };
+		9A3BDADFE3C7ADFD3FBC257F /* Pods-SwipeMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeMemo.debug.xcconfig"; path = "Target Support Files/Pods-SwipeMemo/Pods-SwipeMemo.debug.xcconfig"; sourceTree = "<group>"; };
+		D1BFD682BC1CC16648114CA9 /* Pods-SwipeMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeMemo.release.xcconfig"; path = "Target Support Files/Pods-SwipeMemo/Pods-SwipeMemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA5D89C3EAD4FF6DCF80BC10 /* Pods_EphemeralMemo.framework in Frameworks */,
+				3AD8E5419E02730EE409470D /* Pods_SwipeMemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +67,7 @@
 		2125141D286D055E0022B78D = {
 			isa = PBXGroup;
 			children = (
-				21251428286D055E0022B78D /* EphemeralMemo */,
+				21251428286D055E0022B78D /* SwipeMemo */,
 				21251427286D055E0022B78D /* Products */,
 				502B3160CB842EC2BA53C58E /* Pods */,
 				919686B7B846AB819A7377DA /* Frameworks */,
@@ -75,12 +77,12 @@
 		21251427286D055E0022B78D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				21251426286D055E0022B78D /* EphemeralMemo.app */,
+				21251426286D055E0022B78D /* SwipeMemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		21251428286D055E0022B78D /* EphemeralMemo */ = {
+		21251428286D055E0022B78D /* SwipeMemo */ = {
 			isa = PBXGroup;
 			children = (
 				21251429286D055E0022B78D /* AppDelegate.swift */,
@@ -101,7 +103,7 @@
 				21251434286D055F0022B78D /* LaunchScreen.storyboard */,
 				21251437286D055F0022B78D /* Info.plist */,
 			);
-			path = EphemeralMemo;
+			path = SwipeMemo;
 			sourceTree = "<group>";
 		};
 		502B3160CB842EC2BA53C58E /* Pods */ = {
@@ -109,6 +111,8 @@
 			children = (
 				8CDF7CDAC202AE135699D657 /* Pods-EphemeralMemo.debug.xcconfig */,
 				88B22F7C68868A20248C457B /* Pods-EphemeralMemo.release.xcconfig */,
+				9A3BDADFE3C7ADFD3FBC257F /* Pods-SwipeMemo.debug.xcconfig */,
+				D1BFD682BC1CC16648114CA9 /* Pods-SwipeMemo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -116,7 +120,7 @@
 		919686B7B846AB819A7377DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				193C3FFD398C9D893C454171 /* Pods_EphemeralMemo.framework */,
+				68BCA38EC342CD6983BAE59F /* Pods_SwipeMemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,9 +128,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		21251425286D055E0022B78D /* EphemeralMemo */ = {
+		21251425286D055E0022B78D /* SwipeMemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2125143A286D055F0022B78D /* Build configuration list for PBXNativeTarget "EphemeralMemo" */;
+			buildConfigurationList = 2125143A286D055F0022B78D /* Build configuration list for PBXNativeTarget "SwipeMemo" */;
 			buildPhases = (
 				545008D45B9AAF6EF566B270 /* [CP] Check Pods Manifest.lock */,
 				21251422286D055E0022B78D /* Sources */,
@@ -138,9 +142,9 @@
 			);
 			dependencies = (
 			);
-			name = EphemeralMemo;
+			name = SwipeMemo;
 			productName = EphemeralMemo;
-			productReference = 21251426286D055E0022B78D /* EphemeralMemo.app */;
+			productReference = 21251426286D055E0022B78D /* SwipeMemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -158,7 +162,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 21251421286D055E0022B78D /* Build configuration list for PBXProject "EphemeralMemo" */;
+			buildConfigurationList = 21251421286D055E0022B78D /* Build configuration list for PBXProject "SwipeMemo" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -171,7 +175,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				21251425286D055E0022B78D /* EphemeralMemo */,
+				21251425286D055E0022B78D /* SwipeMemo */,
 			);
 		};
 /* End PBXProject section */
@@ -205,7 +209,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EphemeralMemo-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SwipeMemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -218,15 +222,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EphemeralMemo/Pods-EphemeralMemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SwipeMemo/Pods-SwipeMemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EphemeralMemo/Pods-EphemeralMemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SwipeMemo/Pods-SwipeMemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EphemeralMemo/Pods-EphemeralMemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwipeMemo/Pods-SwipeMemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -392,7 +396,7 @@
 		};
 		2125143B286D055F0022B78D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CDF7CDAC202AE135699D657 /* Pods-EphemeralMemo.debug.xcconfig */;
+			baseConfigurationReference = 9A3BDADFE3C7ADFD3FBC257F /* Pods-SwipeMemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -400,8 +404,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8HML8TR8DQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EphemeralMemo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = EpheMemo;
+				INFOPLIST_FILE = SwipeMemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Swipe Memo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -412,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.tajima-taso.yuya.tajima.EphemeralMemo";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.tajima-taso.yuya.tajima.SwipeMemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -422,7 +426,7 @@
 		};
 		2125143C286D055F0022B78D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88B22F7C68868A20248C457B /* Pods-EphemeralMemo.release.xcconfig */;
+			baseConfigurationReference = D1BFD682BC1CC16648114CA9 /* Pods-SwipeMemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -430,8 +434,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8HML8TR8DQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EphemeralMemo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = EpheMemo;
+				INFOPLIST_FILE = SwipeMemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Swipe Memo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -442,7 +446,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.tajima-taso.yuya.tajima.EphemeralMemo";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.tajima-taso.yuya.tajima.SwipeMemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -453,7 +457,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		21251421286D055E0022B78D /* Build configuration list for PBXProject "EphemeralMemo" */ = {
+		21251421286D055E0022B78D /* Build configuration list for PBXProject "SwipeMemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21251438286D055F0022B78D /* Debug */,
@@ -462,7 +466,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2125143A286D055F0022B78D /* Build configuration list for PBXNativeTarget "EphemeralMemo" */ = {
+		2125143A286D055F0022B78D /* Build configuration list for PBXNativeTarget "SwipeMemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2125143B286D055F0022B78D /* Debug */,

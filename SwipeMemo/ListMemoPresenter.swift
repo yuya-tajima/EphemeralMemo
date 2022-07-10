@@ -1,6 +1,6 @@
 //
 //  ListMemoPresenter.swift
-//  EphemeralMemo
+//  SwipeMemo
 //
 //  Created by 優也田島 on 2022/07/09.
 //
