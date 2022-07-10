@@ -8,8 +8,18 @@
 protocol EditMemoPresenterInput {
     func shouldChangeTextIn (totalWordCount words: Int, totalLineCount lines: Int) -> Bool
     func viewWillDisappear(text: String)
-    var editingMemo: Memo! {get set}
     func dismiss()
+    func memo() -> Memo
+}
+
+struct EditDataSender {
+    var prevScene: EditMemoDismissActionProtocol!
+    var memo: Memo!
+    
+    init(prevScene: EditMemoDismissActionProtocol, memo: Memo) {
+        self.prevScene = prevScene
+        self.memo = memo
+    }
 }
 
 protocol EditMemoDismissActionProtocol {
@@ -19,23 +29,25 @@ protocol EditMemoDismissActionProtocol {
 protocol EditMemoPresenterOutput: AnyObject {}
 
 struct EditMemoPresenter: EditMemoPresenterInput {
-    
-    var prevController: EditMemoDismissActionProtocol!
 
     private weak var view: EditMemoPresenterOutput!
     private var model: EditMemoModelInput
     private var helper: InputMemoConstraintsProtocol
-    
-    var editingMemo: Memo!
-    
-    init(view: EditMemoPresenterOutput, model: EditMemoModelInput, helper: InputMemoConstraintsProtocol) {
+    private var sender: EditDataSender
+
+    init(view: EditMemoPresenterOutput, model: EditMemoModelInput, helper: InputMemoConstraintsProtocol, sender: EditDataSender) {
         self.view  = view
         self.model = model
         self.helper = helper
+        self.sender = sender
     }
     
     func dismiss() {
-        prevController.viewWillAppear()
+        sender.prevScene.viewWillAppear()
+    }
+    
+    func memo() -> Memo {
+        return sender.memo
     }
     
     func shouldChangeTextIn (totalWordCount words: Int, totalLineCount lines: Int) -> Bool {
@@ -43,6 +55,6 @@ struct EditMemoPresenter: EditMemoPresenterInput {
     }
     
     func viewWillDisappear(text: String) {
-        self.model.save(memo: editingMemo, text: text)
+        self.model.save(memo: sender.memo, text: text)
     }
 }

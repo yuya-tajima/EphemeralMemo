@@ -23,21 +23,13 @@ class EditMemoViewController: UIViewController {
     }
     
     private func setup () {
-        let memo = self.presenter.editingMemo
-        textField.text = memo?.text
+        let memo = self.presenter.memo()
+        textField.text = memo.text
         textField.font = UIFont.systemFont(ofSize: 20)
         textField.textContainerInset = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
         textField.delegate = self
         
         presentationController?.delegate = self
-    }
-    
-    func setEditingMemo (memo: Memo) {
-        self.presenter.editingMemo = memo
-    }
-    
-    func setPrevController (viewController: EditMemoDismissActionProtocol) {
-        self.presenter.prevController = viewController
     }
     
     override func viewWillDisappear(_ animated: Bool) {

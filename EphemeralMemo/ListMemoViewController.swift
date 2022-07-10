@@ -65,14 +65,17 @@ class ListMemoViewController: UIViewController {
             let editViewController: EditMemoViewController = segue.destination as! EditMemoViewController
             let model = EditMemoModel()
             let helper = InputMemoHelper()
+            let indexPath = self.tableView.indexPathForSelectedRow
+            let sender = EditDataSender(
+                prevScene: self,
+                memo: presenter.memo(forRow: indexPath!.row)!
+            )
             editViewController.inject(presenter: EditMemoPresenter(
                 view:editViewController,
                 model: model,
-                helper: helper
+                helper: helper,
+                sender: sender
             ))
-            let indexPath = self.tableView.indexPathForSelectedRow
-            editViewController.setEditingMemo(memo: presenter.memo(forRow: indexPath!.row)!)
-            editViewController.setPrevController(viewController: self)
         }
     }
 
