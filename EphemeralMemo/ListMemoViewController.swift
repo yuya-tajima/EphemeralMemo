@@ -87,10 +87,6 @@ class ListMemoViewController: UIViewController {
 
 extension ListMemoViewController: UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "cellSegue",sender: nil)
-    }
-
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath)-> UITableViewCell.EditingStyle {
         return .delete
     }
