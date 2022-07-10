@@ -11,7 +11,7 @@ class Memo: Object {
 
     @Persisted(primaryKey: true) var id: ObjectId
     
-    @Persisted var contents = ""
+    @Persisted var text = ""
     
     @Persisted var date = Date()
 }

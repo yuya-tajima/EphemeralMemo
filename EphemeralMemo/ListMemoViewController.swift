@@ -1,27 +1,41 @@
 //
-//  ListViewController.swift
+//  ListMemoViewController.swift
 //  EphemeralMemo
 //
 //  Created by 優也田島 on 2022/06/30.
 //
 
 import UIKit
-import RealmSwift
 
-class ListViewController: UIViewController {
+class ListMemoViewController: UIViewController {
     
-    let realm = try! Realm()
+    private var firstViewController: CreateMemoViewController!
     
-    var memoArray = try! Realm().objects(Memo.self).sorted(byKeyPath: "date", ascending: false)
-    
-    var firstViewController: UIViewController!
+    private var presenter: ListMemoPresenterInput!
 
-    @IBOutlet var tableView: UITableView!
-
+    @IBOutlet weak var tableView: UITableView!
+    
+    func inject(presenter: ListMemoPresenter) {
+        self.presenter = presenter
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        firstViewController = storyboard!.instantiateViewController(withIdentifier: "FirstInput")
+        setup()
+        presenter.viewDidLoad()
+    }
+
+    private func setup () {
+        firstViewController = storyboard!.instantiateViewController(withIdentifier: "FirstInput") as? CreateMemoViewController
+        let model = CreateMemoModel()
+        let helper = InputMemoHelper()
+        firstViewController.inject(
+            presenter: CreateMemoPresenter(
+                view: firstViewController,
+                model: model,
+                helper: helper
+            )
+        )
         
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .clear
@@ -30,7 +44,7 @@ class ListViewController: UIViewController {
         tableView.refreshControl = refreshControl
         tableView.dataSource = self
         tableView.delegate   = self
-        tableView.fillerRowHeight = UITableView.automaticDimension
+        tableView.fillerRowHeight = 40
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -47,23 +61,28 @@ class ListViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let editViewController:EditViewController = segue.destination as! EditViewController
-        
         if segue.identifier == "cellSegue" {
+            let editViewController: EditMemoViewController = segue.destination as! EditMemoViewController
+            let model = EditMemoModel()
+            let helper = InputMemoHelper()
+            editViewController.inject(presenter: EditMemoPresenter(
+                view:editViewController,
+                model: model,
+                helper: helper
+            ))
             let indexPath = self.tableView.indexPathForSelectedRow
-            editViewController.memo = self.memoArray[indexPath!.row]
-            editViewController.delegate = self
+            editViewController.setEditingMemo(memo: presenter.memo(forRow: indexPath!.row)!)
+            editViewController.setPrevController(viewController: self)
         }
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        print("apper")
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        presenter.viewWillAppear()
     }
 }
 
-extension ListViewController: UITableViewDelegate {
+extension ListMemoViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "cellSegue",sender: nil)
@@ -74,37 +93,41 @@ extension ListViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
         if editingStyle == .delete {
-            try! realm.write {
-                self.realm.delete(self.memoArray[indexPath.row])
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            }
+            presenter.didTapDeleteButton(forRow: indexPath.row, indexPath: indexPath)
         }
     }
 }
 
-extension ListViewController: UITableViewDataSource {
+extension ListMemoViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return memoArray.count
+        return presenter.numberOfMemos
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let memo = memoArray[indexPath.row]
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
-        cell.textLabel?.text = memo.contents
-        cell.textLabel?.numberOfLines = 0
-
+        if let memo = presenter.memo(forRow: indexPath.row) {
+            cell.textLabel?.text = memo.text
+            cell.textLabel?.numberOfLines = 0
+        }
         return cell
     }
 }
 
-extension ListViewController: DismissActionProtocol {
-    func viewWillDismiss() {
+extension ListMemoViewController: ListMemoPresenterOutput {
+    
+    func reloadMemo () {
         tableView.reloadData()
+    }
+    
+    func deleteMemo(indexPath: IndexPath) {
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+}
+
+extension ListMemoViewController: EditMemoDismissActionProtocol {
+    func viewWillAppear() {
+        presenter.viewWillAppear()
     }
 }

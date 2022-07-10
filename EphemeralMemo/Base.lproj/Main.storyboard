@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="akI-Hf-nRa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e36-Qt-1a1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List View Controller-->
+        <!--List Memo View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="List" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ListViewController" customModule="EphemeralMemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="List" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ListMemoViewController" customModule="EphemeralMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="T4y-nU-jQy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -38,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="7033.3333333333339" y="83.705357142857139"/>
         </scene>
-        <!--Edit View Controller-->
+        <!--Edit Memo View Controller-->
         <scene sceneID="8qr-tN-WS5">
             <objects>
-                <viewController id="ecG-yK-awO" customClass="EditViewController" customModule="EphemeralMemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ecG-yK-awO" customClass="EditMemoViewController" customModule="EphemeralMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Of-fI-E7i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="7812" y="84"/>
         </scene>
-        <!--Input View Controller-->
+        <!--Create Memo View Controller-->
         <scene sceneID="kYf-4B-Ziz">
             <objects>
-                <viewController storyboardIdentifier="FirstInput" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e36-Qt-1a1" customClass="InputViewController" customModule="EphemeralMemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstInput" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e36-Qt-1a1" customClass="CreateMemoViewController" customModule="EphemeralMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TFa-WP-AYo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,10 +106,11 @@
             </objects>
             <point key="canvasLocation" x="5397.1014492753629" y="83.705357142857139"/>
         </scene>
-        <!--Input View Controller-->
+        <!--Create Memo View Controller-->
         <scene sceneID="mEg-Kr-Sbb">
             <objects>
-                <viewController storyboardIdentifier="SecondInput" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uB4-8S-0YS" customClass="InputViewController" customModule="EphemeralMemo" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="58a-v1-ZvT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="SecondInput" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uB4-8S-0YS" customClass="CreateMemoViewController" customModule="EphemeralMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9og-6p-O1Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,7 +137,6 @@
                         <outlet property="textField" destination="CL0-83-9ig" id="IHO-ss-0m1"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="58a-v1-ZvT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6197.1014492753629" y="83.705357142857139"/>
         </scene>

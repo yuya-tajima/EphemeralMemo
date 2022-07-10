@@ -9,13 +9,20 @@
 /* Begin PBXBuildFile section */
 		2125142A286D055E0022B78D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21251429286D055E0022B78D /* AppDelegate.swift */; };
 		2125142C286D055E0022B78D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2125142B286D055E0022B78D /* SceneDelegate.swift */; };
-		2125142E286D055E0022B78D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2125142D286D055E0022B78D /* ListViewController.swift */; };
+		2125142E286D055E0022B78D /* ListMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2125142D286D055E0022B78D /* ListMemoViewController.swift */; };
 		21251431286D055E0022B78D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2125142F286D055E0022B78D /* Main.storyboard */; };
 		21251433286D055F0022B78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21251432286D055F0022B78D /* Assets.xcassets */; };
 		21251436286D055F0022B78D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21251434286D055F0022B78D /* LaunchScreen.storyboard */; };
-		21B31100286FB9D400699597 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B310FF286FB9D400699597 /* InputViewController.swift */; };
+		21B31100286FB9D400699597 /* CreateMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B310FF286FB9D400699597 /* CreateMemoViewController.swift */; };
 		21B311022873A1B000699597 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B311012873A1B000699597 /* Memo.swift */; };
-		21B3110828790E0E00699597 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B3110728790E0E00699597 /* EditViewController.swift */; };
+		21B3110828790E0E00699597 /* EditMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B3110728790E0E00699597 /* EditMemoViewController.swift */; };
+		21B3110A28795BD300699597 /* InputMemoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B3110928795BD300699597 /* InputMemoHelper.swift */; };
+		21B3110E2879BB8F00699597 /* ListMemoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B3110D2879BB8F00699597 /* ListMemoPresenter.swift */; };
+		21B311102879BC8B00699597 /* ListMemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B3110F2879BC8B00699597 /* ListMemoModel.swift */; };
+		21B31112287A622000699597 /* CreateMemoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B31111287A622000699597 /* CreateMemoPresenter.swift */; };
+		21B31114287A663800699597 /* CreateMemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B31113287A663800699597 /* CreateMemoModel.swift */; };
+		21B31116287A74D300699597 /* EditMemoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B31115287A74D300699597 /* EditMemoPresenter.swift */; };
+		21B31118287A754600699597 /* EditMemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B31117287A754600699597 /* EditMemoModel.swift */; };
 		BA5D89C3EAD4FF6DCF80BC10 /* Pods_EphemeralMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 193C3FFD398C9D893C454171 /* Pods_EphemeralMemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,14 +31,21 @@
 		21251426286D055E0022B78D /* EphemeralMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EphemeralMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21251429286D055E0022B78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2125142B286D055E0022B78D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2125142D286D055E0022B78D /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		2125142D286D055E0022B78D /* ListMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMemoViewController.swift; sourceTree = "<group>"; };
 		21251430286D055E0022B78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21251432286D055F0022B78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21251435286D055F0022B78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21251437286D055F0022B78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		21B310FF286FB9D400699597 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		21B310FF286FB9D400699597 /* CreateMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMemoViewController.swift; sourceTree = "<group>"; };
 		21B311012873A1B000699597 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
-		21B3110728790E0E00699597 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		21B3110728790E0E00699597 /* EditMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemoViewController.swift; sourceTree = "<group>"; };
+		21B3110928795BD300699597 /* InputMemoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMemoHelper.swift; sourceTree = "<group>"; };
+		21B3110D2879BB8F00699597 /* ListMemoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMemoPresenter.swift; sourceTree = "<group>"; };
+		21B3110F2879BC8B00699597 /* ListMemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMemoModel.swift; sourceTree = "<group>"; };
+		21B31111287A622000699597 /* CreateMemoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMemoPresenter.swift; sourceTree = "<group>"; };
+		21B31113287A663800699597 /* CreateMemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMemoModel.swift; sourceTree = "<group>"; };
+		21B31115287A74D300699597 /* EditMemoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemoPresenter.swift; sourceTree = "<group>"; };
+		21B31117287A754600699597 /* EditMemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemoModel.swift; sourceTree = "<group>"; };
 		88B22F7C68868A20248C457B /* Pods-EphemeralMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EphemeralMemo.release.xcconfig"; path = "Target Support Files/Pods-EphemeralMemo/Pods-EphemeralMemo.release.xcconfig"; sourceTree = "<group>"; };
 		8CDF7CDAC202AE135699D657 /* Pods-EphemeralMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EphemeralMemo.debug.xcconfig"; path = "Target Support Files/Pods-EphemeralMemo/Pods-EphemeralMemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,9 +85,16 @@
 			children = (
 				21251429286D055E0022B78D /* AppDelegate.swift */,
 				2125142B286D055E0022B78D /* SceneDelegate.swift */,
-				2125142D286D055E0022B78D /* ListViewController.swift */,
-				21B310FF286FB9D400699597 /* InputViewController.swift */,
-				21B3110728790E0E00699597 /* EditViewController.swift */,
+				2125142D286D055E0022B78D /* ListMemoViewController.swift */,
+				21B3110928795BD300699597 /* InputMemoHelper.swift */,
+				21B3110D2879BB8F00699597 /* ListMemoPresenter.swift */,
+				21B31111287A622000699597 /* CreateMemoPresenter.swift */,
+				21B31115287A74D300699597 /* EditMemoPresenter.swift */,
+				21B3110F2879BC8B00699597 /* ListMemoModel.swift */,
+				21B31113287A663800699597 /* CreateMemoModel.swift */,
+				21B31117287A754600699597 /* EditMemoModel.swift */,
+				21B310FF286FB9D400699597 /* CreateMemoViewController.swift */,
+				21B3110728790E0E00699597 /* EditMemoViewController.swift */,
 				2125142F286D055E0022B78D /* Main.storyboard */,
 				21B311012873A1B000699597 /* Memo.swift */,
 				21251432286D055F0022B78D /* Assets.xcassets */,
@@ -215,12 +236,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2125142E286D055E0022B78D /* ListViewController.swift in Sources */,
+				2125142E286D055E0022B78D /* ListMemoViewController.swift in Sources */,
 				2125142A286D055E0022B78D /* AppDelegate.swift in Sources */,
-				21B3110828790E0E00699597 /* EditViewController.swift in Sources */,
+				21B3110828790E0E00699597 /* EditMemoViewController.swift in Sources */,
+				21B31116287A74D300699597 /* EditMemoPresenter.swift in Sources */,
+				21B31114287A663800699597 /* CreateMemoModel.swift in Sources */,
 				2125142C286D055E0022B78D /* SceneDelegate.swift in Sources */,
-				21B31100286FB9D400699597 /* InputViewController.swift in Sources */,
+				21B3110E2879BB8F00699597 /* ListMemoPresenter.swift in Sources */,
+				21B31100286FB9D400699597 /* CreateMemoViewController.swift in Sources */,
+				21B3110A28795BD300699597 /* InputMemoHelper.swift in Sources */,
+				21B31118287A754600699597 /* EditMemoModel.swift in Sources */,
+				21B31112287A622000699597 /* CreateMemoPresenter.swift in Sources */,
 				21B311022873A1B000699597 /* Memo.swift in Sources */,
+				21B311102879BC8B00699597 /* ListMemoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
