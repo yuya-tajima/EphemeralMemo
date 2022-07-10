@@ -14,11 +14,13 @@ protocol ListMemoPresenterInput {
     func memo(forRow row:Int) -> Memo?
     mutating func viewDidLoad()
     func viewWillAppear()
+    func pullDown()
 }
 
 protocol ListMemoPresenterOutput: AnyObject {
     func deleteMemo(indexPath:IndexPath)
     func reloadMemo()
+    func transitionToCreate()
 }
 
 struct ListMemoPresenter: ListMemoPresenterInput {
@@ -49,6 +51,10 @@ struct ListMemoPresenter: ListMemoPresenterInput {
         view.reloadMemo()
     }
     
+    func pullDown() {
+        view.transitionToCreate()
+    }
+
     func didTapDeleteButton(forRow row: Int, indexPath at: IndexPath) {
         if let memo = memo(forRow: row) {
             self.model.delete(memo: memo) { () in

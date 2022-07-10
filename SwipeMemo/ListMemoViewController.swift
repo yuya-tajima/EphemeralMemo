@@ -39,7 +39,7 @@ class ListMemoViewController: UIViewController {
         
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .clear
-        refreshControl.addTarget(self, action: #selector(addMemo(_:)), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(createMemo(_:)), for: .valueChanged)
         
         tableView.refreshControl = refreshControl
         tableView.dataSource = self
@@ -49,15 +49,9 @@ class ListMemoViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    @objc private func addMemo(_ sender: UIRefreshControl) {
+    @objc private func createMemo(_ sender: UIRefreshControl) {
         tableView.refreshControl!.endRefreshing()
-        
-        let transition:CATransition = CATransition()
-        transition.duration = 0.1
-        transition.type = .push
-        transition.subtype = .fromBottom
-        self.navigationController!.view.layer.add(transition, forKey: kCATransition)
-        self.navigationController!.pushViewController(firstViewController, animated: false)
+        presenter.pullDown()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -124,6 +118,15 @@ extension ListMemoViewController: ListMemoPresenterOutput {
     
     func deleteMemo(indexPath: IndexPath) {
         tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+
+    func transitionToCreate() {
+        let transition:CATransition = CATransition()
+        transition.duration = 0.1
+        transition.type = .push
+        transition.subtype = .fromBottom
+        self.navigationController!.view.layer.add(transition, forKey: kCATransition)
+        self.navigationController!.setViewControllers([firstViewController], animated: false)
     }
 }
 
