@@ -70,12 +70,14 @@ class ListMemoViewController: UIViewController {
                 prevScene: self,
                 memo: presenter.memo(forRow: indexPath!.row)!
             )
-            editViewController.inject(presenter: EditMemoPresenter(
-                view:editViewController,
-                model: model,
-                helper: helper,
-                sender: sender
-            ))
+            editViewController.inject(
+                presenter: EditMemoPresenter(
+                    view:editViewController,
+                    model: model,
+                    helper: helper,
+                    sender: sender
+                )
+            )
         }
     }
 
