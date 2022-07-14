@@ -19,7 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let createMemoViewController = storyboard.instantiateInitialViewController() as! CreateMemoViewController
+        guard let createMemoViewController = storyboard.instantiateInitialViewController() as? CreateMemoViewController else {
+            print("ERROR: CreateMemoViewController does not exist")
+            return
+        }
         
         let navigationController = UINavigationController(
             rootViewController: createMemoViewController

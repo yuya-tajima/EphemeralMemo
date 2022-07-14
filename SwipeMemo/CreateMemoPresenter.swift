@@ -34,7 +34,13 @@ struct CreateMemoPresenter: CreateMemoPresenterInput {
     }
     
     func viewWillDisappear(text: String) {
-        self.model.save(text: text)
+        do {
+            try self.model.save(text: text)
+        } catch StorageError.write(let message) {
+            MemoError.pushErrorMessage(message: message)
+        } catch {
+            fatalError("Unexpected error: \(error).")
+        }
     }
     
     func didLeftSwipe(storyboardID id: String) {

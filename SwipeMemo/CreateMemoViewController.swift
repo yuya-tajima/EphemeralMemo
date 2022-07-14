@@ -28,12 +28,17 @@ class CreateMemoViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        if MemoError.exists() {
+            let dialog = UIAlertController(title: "Error", message: MemoError.popErrorMessage(), preferredStyle: .alert)
+            dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(dialog, animated: true, completion: nil)
+        }
         self.textField.becomeFirstResponder()
     }
     
     private func setup() {
         
-        self.navigationController!.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         textField.font = UIFont.systemFont(ofSize: 20)
         textField.textContainerInset = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)

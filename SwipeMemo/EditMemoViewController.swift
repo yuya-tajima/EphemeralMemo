@@ -55,6 +55,9 @@ extension EditMemoViewController: UIAdaptivePresentationControllerDelegate {
     func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
         presenter.dismiss()
     }
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        presenter.dismissAfter()
+    }
 }
 
 extension EditMemoViewController: EditMemoPresenterOutput {}

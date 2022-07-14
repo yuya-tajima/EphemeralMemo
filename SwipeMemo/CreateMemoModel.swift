@@ -8,19 +8,25 @@
 import RealmSwift
 
 protocol CreateMemoModelInput {
-    func save(text: String)
+    func save(text: String) throws -> Void
 }
 
 struct CreateMemoModel: CreateMemoModelInput {
     
-    private let realm = try! Realm()
-    
-    func save(text: String) {
-        try! realm.write {
-            let memo = Memo()
-            memo.text = text
-            memo.date = Date()
-            realm.add(memo, update: .modified)
+    func save(text: String) throws -> Void {
+        do {
+            let realm = try Realm()
+
+            try realm.write {
+                let memo = Memo()
+                memo.text = text
+                memo.date = Date()
+                realm.add(memo, update: .modified)
+            }
+            
+        } catch let error as NSError {
+            print(error.localizedDescription)
+            throw StorageError.write("Not enough disk space for creating")
         }
     }
 }

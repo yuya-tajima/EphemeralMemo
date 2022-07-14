@@ -79,6 +79,14 @@ class ListMemoViewController: UIViewController {
         super.viewWillAppear(animated)
         presenter.viewWillAppear()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if MemoError.exists() {
+            let dialog = UIAlertController(title: "Error", message: MemoError.popErrorMessage(), preferredStyle: .alert)
+            dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(dialog, animated: true, completion: nil)
+        }
+    }
 }
 
 extension ListMemoViewController: UITableViewDelegate {
@@ -133,5 +141,13 @@ extension ListMemoViewController: ListMemoPresenterOutput {
 extension ListMemoViewController: EditMemoDismissActionProtocol {
     func viewWillAppear() {
         presenter.viewWillAppear()
+    }
+    
+    func viewDidAppear() {
+        if MemoError.exists() {
+            let dialog = UIAlertController(title: "Error", message: MemoError.popErrorMessage(), preferredStyle: .alert)
+            dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(dialog, animated: true, completion: nil)
+        }
     }
 }

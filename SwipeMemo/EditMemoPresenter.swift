@@ -24,11 +24,13 @@ struct EditDataSender {
 
 protocol EditMemoDismissActionProtocol {
     func viewWillAppear()
+    func viewDidAppear()
 }
 
 protocol EditMemoPresenterOutput: AnyObject {}
 
 struct EditMemoPresenter: EditMemoPresenterInput {
+
 
     private weak var view: EditMemoPresenterOutput!
     private var model: EditMemoModelInput
@@ -46,6 +48,10 @@ struct EditMemoPresenter: EditMemoPresenterInput {
         sender.prevScene.viewWillAppear()
     }
     
+    func dismissAfter() {
+        sender.prevScene.viewDidAppear()
+    }
+    
     func memo() -> Memo {
         return sender.memo
     }
@@ -55,6 +61,12 @@ struct EditMemoPresenter: EditMemoPresenterInput {
     }
     
     func viewWillDisappear(text: String) {
-        self.model.save(memo: sender.memo, text: text)
+        do {
+            try self.model.save(memo: sender.memo, text: text)
+        } catch StorageError.write(let message) {
+            MemoError.pushErrorMessage(message: message)
+        } catch {
+            fatalError("Unexpected error: \(error).")
+        }
     }
 }
