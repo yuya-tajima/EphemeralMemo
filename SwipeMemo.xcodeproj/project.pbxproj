@@ -48,8 +48,8 @@
 		21B31115287A74D300699597 /* EditMemoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemoPresenter.swift; sourceTree = "<group>"; };
 		21B31117287A754600699597 /* EditMemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemoModel.swift; sourceTree = "<group>"; };
 		68BCA38EC342CD6983BAE59F /* Pods_SwipeMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwipeMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		88B22F7C68868A20248C457B /* Pods-EphemeralMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EphemeralMemo.release.xcconfig"; path = "Target Support Files/Pods-EphemeralMemo/Pods-EphemeralMemo.release.xcconfig"; sourceTree = "<group>"; };
-		8CDF7CDAC202AE135699D657 /* Pods-EphemeralMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EphemeralMemo.debug.xcconfig"; path = "Target Support Files/Pods-EphemeralMemo/Pods-EphemeralMemo.debug.xcconfig"; sourceTree = "<group>"; };
+		88B22F7C68868A20248C457B /* Pods-SwipeMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeMemo.release.xcconfig"; path = "Target Support Files/Pods-SwipeMemo/Pods-SwipeMemo.release.xcconfig"; sourceTree = "<group>"; };
+		8CDF7CDAC202AE135699D657 /* Pods-SwipeMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeMemo.debug.xcconfig"; path = "Target Support Files/Pods-SwipeMemo/Pods-SwipeMemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9A3BDADFE3C7ADFD3FBC257F /* Pods-SwipeMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeMemo.debug.xcconfig"; path = "Target Support Files/Pods-SwipeMemo/Pods-SwipeMemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D1BFD682BC1CC16648114CA9 /* Pods-SwipeMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeMemo.release.xcconfig"; path = "Target Support Files/Pods-SwipeMemo/Pods-SwipeMemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,8 +112,8 @@
 		502B3160CB842EC2BA53C58E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8CDF7CDAC202AE135699D657 /* Pods-EphemeralMemo.debug.xcconfig */,
-				88B22F7C68868A20248C457B /* Pods-EphemeralMemo.release.xcconfig */,
+				8CDF7CDAC202AE135699D657 /* Pods-SwipeMemo.debug.xcconfig */,
+				88B22F7C68868A20248C457B /* Pods-SwipeMemo.release.xcconfig */,
 				9A3BDADFE3C7ADFD3FBC257F /* Pods-SwipeMemo.debug.xcconfig */,
 				D1BFD682BC1CC16648114CA9 /* Pods-SwipeMemo.release.xcconfig */,
 			);
