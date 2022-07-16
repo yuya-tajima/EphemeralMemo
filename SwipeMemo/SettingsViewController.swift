@@ -25,19 +25,30 @@ class SettingsViewController: UIViewController {
         )
         downSwipe.direction = .down
         self.view.addGestureRecognizer(downSwipe)
+
+        let leftSwipe = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(self.didSwipe(_:))
+        )
+        leftSwipe.direction = .left
+        self.view.addGestureRecognizer(leftSwipe)
     }
 
     @objc func didSwipe(_ sender: UISwipeGestureRecognizer) {
+
+        let transition:CATransition = CATransition()
+        transition.duration = 0.25
+        transition.type = .push
+
         switch sender.direction {
         case .down:
-            let transition:CATransition = CATransition()
-            transition.duration = 0.25
-            transition.type = .push
             transition.subtype = .fromTop
-            self.navigationController?.view.layer.add(transition, forKey: kCATransition)
-            self.navigationController?.popViewController(animated: false)
+        case .left:
+            transition.subtype = .fromRight
         default:
             break
         }
+        self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+        self.navigationController?.popViewController(animated: false)
     }
 }
