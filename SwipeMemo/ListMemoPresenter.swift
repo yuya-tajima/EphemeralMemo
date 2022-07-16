@@ -13,7 +13,6 @@ protocol ListMemoPresenterInput {
     func didSwipeLeft()
     var numberOfMemos: Int { get }
     func memo(forRow row:Int) -> Memo
-    mutating func fetchMemo()
     func viewWillAppear()
     func pullDown()
 }
@@ -25,7 +24,7 @@ protocol ListMemoPresenterOutput: AnyObject {
     func transitionToSettings()
 }
 
-struct ListMemoPresenter: ListMemoPresenterInput {
+final class ListMemoPresenter: ListMemoPresenterInput {
     
     private weak var view: ListMemoPresenterOutput!
     private var model: ListMemoModelInput
@@ -45,7 +44,7 @@ struct ListMemoPresenter: ListMemoPresenterInput {
         return memos[row]
     }
     
-    mutating func fetchMemo() {
+    private func fetchMemo() {
         do {
             try memos = self.model.fetchAll()
         } catch StorageError.write(let message) {
@@ -56,6 +55,7 @@ struct ListMemoPresenter: ListMemoPresenterInput {
     }
     
     func viewWillAppear() {
+        fetchMemo()
         view.reloadMemo()
     }
     
@@ -67,6 +67,7 @@ struct ListMemoPresenter: ListMemoPresenterInput {
         let memo = memo(forRow: row)
         do {
             try self.model.delete(memo: memo)
+            fetchMemo()
             self.view.deleteMemo(indexPath: at)
         } catch StorageError.write(let message) {
             MemoError.pushErrorMessage(message: message)

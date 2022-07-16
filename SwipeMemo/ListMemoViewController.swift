@@ -103,7 +103,6 @@ class ListMemoViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.fetchMemo()
         presenter.viewWillAppear()
     }
     
@@ -151,7 +150,6 @@ extension ListMemoViewController: ListMemoPresenterOutput {
     }
     
     func deleteMemo(indexPath: IndexPath) {
-        presenter.fetchMemo()
         tableView.deleteRows(at: [indexPath], with: .fade)
     }
 
