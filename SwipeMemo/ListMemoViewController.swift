@@ -46,7 +46,23 @@ class ListMemoViewController: UIViewController {
         tableView.delegate   = self
         tableView.fillerRowHeight = 40
         
+        let rightSwipe = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(self.didSwipe(_:))
+        )
+        rightSwipe.direction = .right
+        tableView.addGestureRecognizer(rightSwipe)
+        
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    @objc func didSwipe(_ sender: UISwipeGestureRecognizer) {
+        switch sender.direction {
+        case .right:
+            presenter.didSwipeLeft()
+        default:
+            break
+        }
     }
     
     @objc private func createMemo(_ sender: UIRefreshControl) {
@@ -149,6 +165,10 @@ extension ListMemoViewController: ListMemoPresenterOutput {
         transition.subtype = .fromBottom
         self.navigationController?.view.layer.add(transition, forKey: kCATransition)
         self.navigationController?.setViewControllers([firstViewController], animated: false)
+    }
+
+    func transitionToSettings() {
+        performSegue(withIdentifier: "Settings", sender: nil)
     }
 }
 

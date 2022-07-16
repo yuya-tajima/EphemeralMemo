@@ -32,11 +32,12 @@
                     </tableView>
                     <connections>
                         <outlet property="tableView" destination="T4y-nU-jQy" id="lwh-ZL-UJk"/>
+                        <segue destination="raP-qB-6Rs" kind="show" identifier="Settings" customClass="SettingsUIStoryboardSegue" customModule="SwipeMemo" customModuleProvider="target" id="wNc-14-v5h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7033.3333333333339" y="83.705357142857139"/>
+            <point key="canvasLocation" x="7059" y="84"/>
         </scene>
         <!--Edit Memo View Controller-->
         <scene sceneID="8qr-tN-WS5">
@@ -70,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1MO-CE-iB2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7812" y="84"/>
+            <point key="canvasLocation" x="7838" y="84"/>
         </scene>
         <!--Create Memo View Controller-->
         <scene sceneID="kYf-4B-Ziz">
@@ -139,6 +140,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="58a-v1-ZvT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6197.1014492753629" y="83.705357142857139"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="8Wx-sk-VYd">
+            <objects>
+                <viewController storyboardIdentifier="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="raP-qB-6Rs" customClass="SettingsViewController" customModule="SwipeMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XHW-pR-CAb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ekt-7f-313" userLabel="App Name">
+                                <rect key="frame" x="10" y="54" width="188" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpO-UV-Sn8">
+                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe Memo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G7-hh-SUW">
+                                        <rect key="frame" x="89.5" y="0.0" width="98.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2f-ap-IOq" userLabel="App Version">
+                                <rect key="frame" x="10" y="82" width="151" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Version: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbY-Vt-ATA">
+                                        <rect key="frame" x="0.0" y="0.0" width="101" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pe-i4-qU8">
+                                        <rect key="frame" x="101" y="0.0" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aPN-hD-WL7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ekt-7f-313" firstAttribute="top" secondItem="aPN-hD-WL7" secondAttribute="top" constant="10" id="L2U-zq-FNy"/>
+                            <constraint firstItem="p2f-ap-IOq" firstAttribute="leading" secondItem="aPN-hD-WL7" secondAttribute="leading" constant="10" id="e8V-5G-Rlv"/>
+                            <constraint firstItem="p2f-ap-IOq" firstAttribute="top" secondItem="Ekt-7f-313" secondAttribute="bottom" constant="7.5" id="iGF-Ck-fQU"/>
+                            <constraint firstItem="Ekt-7f-313" firstAttribute="leading" secondItem="aPN-hD-WL7" secondAttribute="leading" constant="10" id="pyi-4Q-sT4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="it4-ow-8b3"/>
+                    <connections>
+                        <outlet property="versionLabel" destination="1pe-i4-qU8" id="2cp-xw-foc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pki-KA-vtc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7058" y="791"/>
         </scene>
     </scenes>
     <resources>

@@ -10,6 +10,7 @@ import RealmSwift
 
 protocol ListMemoPresenterInput {
     func didTapDeleteButton(forRow row: Int, indexPath: IndexPath)
+    func didSwipeLeft()
     var numberOfMemos: Int { get }
     func memo(forRow row:Int) -> Memo?
     mutating func viewDidLoad()
@@ -21,6 +22,7 @@ protocol ListMemoPresenterOutput: AnyObject {
     func deleteMemo(indexPath:IndexPath)
     func reloadMemo()
     func transitionToCreate()
+    func transitionToSettings()
 }
 
 struct ListMemoPresenter: ListMemoPresenterInput {
@@ -72,5 +74,9 @@ struct ListMemoPresenter: ListMemoPresenterInput {
                 fatalError("Unexpected error: \(error).")
             }
         }
+    }
+
+    func didSwipeLeft() {
+        view.transitionToSettings()
     }
 }
