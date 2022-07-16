@@ -134,8 +134,8 @@ extension CreateMemoViewController: CreateMemoPresenterOutput {
         transition.duration = 0.1
         transition.type = .push
         transition.subtype = .fromRight
-        self.navigationController!.view.layer.add(transition, forKey: kCATransition)
-        self.navigationController!.setViewControllers(controllerStack, animated: false)
+        self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+        self.navigationController?.setViewControllers(controllerStack, animated: false)
     }
     
     func transitionToList() {
@@ -144,7 +144,7 @@ extension CreateMemoViewController: CreateMemoPresenterOutput {
         transition.duration = 0.1
         transition.type = .push
         transition.subtype = .fromTop
-        self.navigationController!.view.layer.add(transition, forKey: kCATransition)
-        self.navigationController!.setViewControllers(controllerStack, animated: false)
+        self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+        self.navigationController?.setViewControllers(controllerStack, animated: false)
     }
 }

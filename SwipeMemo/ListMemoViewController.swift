@@ -26,7 +26,7 @@ class ListMemoViewController: UIViewController {
     }
 
     private func setup () {
-        firstViewController = storyboard!.instantiateViewController(withIdentifier: "FirstInput") as? CreateMemoViewController
+        firstViewController = storyboard?.instantiateViewController(withIdentifier: "FirstInput") as? CreateMemoViewController
         let model = CreateMemoModel()
         let helper = InputMemoHelper()
         firstViewController.inject(
@@ -56,13 +56,27 @@ class ListMemoViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "cellSegue" {
-            let editViewController: EditMemoViewController = segue.destination as! EditMemoViewController
+            guard let editViewController: EditMemoViewController = segue.destination as? EditMemoViewController
+            else {
+                print("ERROR: EditMemoViewController does not exist")
+                return
+            }
             let model = EditMemoModel()
             let helper = InputMemoHelper()
-            let indexPath = self.tableView.indexPathForSelectedRow
+
+            guard let indexPath = self.tableView.indexPathForSelectedRow else {
+                print("ERROR: The selected row of tavleview does not exist")
+                return
+            }
+
+            guard let memo = presenter.memo(forRow: indexPath.row) else {
+                print("ERROR: There is no memo associated with the selected row")
+                return
+            }
+
             let sender = EditDataSender(
                 prevScene: self,
-                memo: presenter.memo(forRow: indexPath!.row)!
+                memo: memo
             )
             editViewController.inject(
                 presenter: EditMemoPresenter(
@@ -133,8 +147,8 @@ extension ListMemoViewController: ListMemoPresenterOutput {
         transition.duration = 0.1
         transition.type = .push
         transition.subtype = .fromBottom
-        self.navigationController!.view.layer.add(transition, forKey: kCATransition)
-        self.navigationController!.setViewControllers([firstViewController], animated: false)
+        self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+        self.navigationController?.setViewControllers([firstViewController], animated: false)
     }
 }
 
