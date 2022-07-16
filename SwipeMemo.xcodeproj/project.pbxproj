@@ -14,6 +14,7 @@
 		21251433286D055F0022B78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21251432286D055F0022B78D /* Assets.xcassets */; };
 		21251436286D055F0022B78D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21251434286D055F0022B78D /* LaunchScreen.storyboard */; };
 		21A4B3FF28803BC700BF2CA7 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A4B3FE28803BC700BF2CA7 /* Errors.swift */; };
+		21A4B403288278C900BF2CA7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21A4B402288278C900BF2CA7 /* Settings.bundle */; };
 		21B31100286FB9D400699597 /* CreateMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B310FF286FB9D400699597 /* CreateMemoViewController.swift */; };
 		21B311022873A1B000699597 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B311012873A1B000699597 /* Memo.swift */; };
 		21B3110828790E0E00699597 /* EditMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B3110728790E0E00699597 /* EditMemoViewController.swift */; };
@@ -37,6 +38,7 @@
 		21251435286D055F0022B78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21251437286D055F0022B78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21A4B3FE28803BC700BF2CA7 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		21A4B402288278C900BF2CA7 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		21B310FF286FB9D400699597 /* CreateMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMemoViewController.swift; sourceTree = "<group>"; };
 		21B311012873A1B000699597 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		21B3110728790E0E00699597 /* EditMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemoViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		2125141D286D055E0022B78D = {
 			isa = PBXGroup;
 			children = (
+				21A4B402288278C900BF2CA7 /* Settings.bundle */,
 				21251428286D055E0022B78D /* SwipeMemo */,
 				21251427286D055E0022B78D /* Products */,
 				502B3160CB842EC2BA53C58E /* Pods */,
@@ -188,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A4B403288278C900BF2CA7 /* Settings.bundle in Resources */,
 				21251436286D055F0022B78D /* LaunchScreen.storyboard in Resources */,
 				21251433286D055F0022B78D /* Assets.xcassets in Resources */,
 				21251431286D055E0022B78D /* Main.storyboard in Resources */,

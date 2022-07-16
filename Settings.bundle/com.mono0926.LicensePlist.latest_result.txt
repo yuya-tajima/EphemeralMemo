@@ -1,0 +1,17 @@
+name: Realm, nameSpecified: 
+body: TABLE OF CONTENTS
+
+1…
+version: 10.28.0
+
+name: RealmSwift, nameSpecified: 
+body: TABLE OF CONTENTS
+
+1…
+version: 10.28.0
+
+name: LicensePlist, nameSpecified: , owner: mono0926, version: 3.22.0, source: https://github.com/mono0926/LicensePlist
+
+add-version-numbers: false
+
+LicensePlist Version: 3.22.0
