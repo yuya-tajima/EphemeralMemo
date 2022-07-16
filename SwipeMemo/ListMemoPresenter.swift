@@ -31,9 +31,9 @@ struct ListMemoPresenter: ListMemoPresenterInput {
     private var memos: Results<Memo>? = nil
     
     var numberOfMemos: Int {
-        return memos!.count
+        return memos?.count ?? 0
     }
-    
+
     init(view: ListMemoPresenterOutput, model: ListMemoModelInput) {
         self.view  = view
         self.model = model
@@ -44,7 +44,13 @@ struct ListMemoPresenter: ListMemoPresenterInput {
     }
     
     mutating func viewDidLoad() {
-        memos = self.model.fetchAll()
+        do {
+            try memos = self.model.fetchAll()
+        } catch StorageError.write(let message) {
+            MemoError.pushErrorMessage(message: message)
+        } catch {
+            fatalError("Unexpected error: \(error).")
+        }
     }
     
     func viewWillAppear() {
@@ -57,8 +63,13 @@ struct ListMemoPresenter: ListMemoPresenterInput {
 
     func didTapDeleteButton(forRow row: Int, indexPath at: IndexPath) {
         if let memo = memo(forRow: row) {
-            self.model.delete(memo: memo) { () in
+            do {
+                try self.model.delete(memo: memo)
                 self.view.deleteMemo(indexPath: at)
+            } catch StorageError.write(let message) {
+                MemoError.pushErrorMessage(message: message)
+            } catch {
+                fatalError("Unexpected error: \(error).")
             }
         }
     }

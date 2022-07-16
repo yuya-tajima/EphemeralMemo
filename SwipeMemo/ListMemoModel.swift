@@ -8,23 +8,33 @@
 import RealmSwift
 
 protocol ListMemoModelInput {
-    func delete(memo: Memo, completion: () -> ())
-    func fetchAll() -> Results<Memo>
+    func delete(memo: Memo) throws -> Void
+    func fetchAll() throws -> Results<Memo>
 }
 
 struct ListMemoModel: ListMemoModelInput {
     
-    private let realm = try! Realm()
-    
-    func fetchAll () -> Results<Memo> {
-        return realm.objects(Memo.self).sorted(byKeyPath: "date", ascending: false)
+    func fetchAll () throws -> Results<Memo> {
+        do {
+            let realm = try Realm()
+            return realm.objects(Memo.self).sorted(byKeyPath: "date", ascending: false)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+            throw StorageError.unknown("An unexpected error has occurred.")
+        }
     }
     
-    func delete(memo: Memo, completion: () -> ()) {
-        try! realm.write {
-            self.realm.delete(memo)
-            completion()
+    func delete(memo: Memo) throws -> Void {
+        do {
+            let realm = try Realm()
+
+            try realm.write {
+                realm.delete(memo)
+            }
+
+        } catch let error as NSError {
+            print(error.localizedDescription)
+            throw StorageError.write("The selected data could not be deleted")
         }
     }
 }
-

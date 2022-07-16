@@ -7,6 +7,8 @@
 
 enum StorageError: Error {
     case write(String)
+    case read(String)
+    case unknown(String)
 }
 
 enum PresentationError: Error {
