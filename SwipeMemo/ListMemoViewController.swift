@@ -22,7 +22,6 @@ class ListMemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        presenter.viewDidLoad()
     }
 
     private func setup () {
@@ -85,10 +84,7 @@ class ListMemoViewController: UIViewController {
                 return
             }
 
-            guard let memo = presenter.memo(forRow: indexPath.row) else {
-                print("ERROR: There is no memo associated with the selected row")
-                return
-            }
+            let memo = presenter.memo(forRow: indexPath.row)
 
             let sender = EditDataSender(
                 prevScene: self,
@@ -107,6 +103,7 @@ class ListMemoViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        presenter.fetchMemo()
         presenter.viewWillAppear()
     }
     
@@ -140,10 +137,9 @@ extension ListMemoViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        if let memo = presenter.memo(forRow: indexPath.row) {
-            cell.textLabel?.text = memo.text
-            cell.textLabel?.numberOfLines = 0
-        }
+        let memo = presenter.memo(forRow: indexPath.row)
+        cell.textLabel?.text = memo.text
+        cell.textLabel?.numberOfLines = 0
         return cell
     }
 }
@@ -155,6 +151,7 @@ extension ListMemoViewController: ListMemoPresenterOutput {
     }
     
     func deleteMemo(indexPath: IndexPath) {
+        presenter.fetchMemo()
         tableView.deleteRows(at: [indexPath], with: .fade)
     }
 

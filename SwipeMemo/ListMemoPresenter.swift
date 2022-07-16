@@ -12,8 +12,8 @@ protocol ListMemoPresenterInput {
     func didTapDeleteButton(forRow row: Int, indexPath: IndexPath)
     func didSwipeLeft()
     var numberOfMemos: Int { get }
-    func memo(forRow row:Int) -> Memo?
-    mutating func viewDidLoad()
+    func memo(forRow row:Int) -> Memo
+    mutating func fetchMemo()
     func viewWillAppear()
     func pullDown()
 }
@@ -30,10 +30,10 @@ struct ListMemoPresenter: ListMemoPresenterInput {
     private weak var view: ListMemoPresenterOutput!
     private var model: ListMemoModelInput
     
-    private var memos: Results<Memo>? = nil
+    private var memos: [Memo] = []
     
     var numberOfMemos: Int {
-        return memos?.count ?? 0
+        return memos.count
     }
 
     init(view: ListMemoPresenterOutput, model: ListMemoModelInput) {
@@ -41,11 +41,11 @@ struct ListMemoPresenter: ListMemoPresenterInput {
         self.model = model
     }
     
-    func memo(forRow row: Int) -> Memo? {
-        return memos?[row]
+    func memo(forRow row: Int) -> Memo {
+        return memos[row]
     }
     
-    mutating func viewDidLoad() {
+    mutating func fetchMemo() {
         do {
             try memos = self.model.fetchAll()
         } catch StorageError.write(let message) {
@@ -64,15 +64,14 @@ struct ListMemoPresenter: ListMemoPresenterInput {
     }
 
     func didTapDeleteButton(forRow row: Int, indexPath at: IndexPath) {
-        if let memo = memo(forRow: row) {
-            do {
-                try self.model.delete(memo: memo)
-                self.view.deleteMemo(indexPath: at)
-            } catch StorageError.write(let message) {
-                MemoError.pushErrorMessage(message: message)
-            } catch {
-                fatalError("Unexpected error: \(error).")
-            }
+        let memo = memo(forRow: row)
+        do {
+            try self.model.delete(memo: memo)
+            self.view.deleteMemo(indexPath: at)
+        } catch StorageError.write(let message) {
+            MemoError.pushErrorMessage(message: message)
+        } catch {
+            fatalError("Unexpected error: \(error).")
         }
     }
 
