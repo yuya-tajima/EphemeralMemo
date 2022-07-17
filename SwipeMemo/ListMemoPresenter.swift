@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 protocol ListMemoPresenterInput {
     func didTapDeleteButton(forRow row: Int, indexPath: IndexPath)
