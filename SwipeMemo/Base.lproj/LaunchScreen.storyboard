@@ -16,18 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fq4-DS-tZd">
-                                <rect key="frame" x="192" y="437.5" width="30" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swipe-memo" translatesAutoresizingMaskIntoConstraints="NO" id="Tg0-2b-tvl">
+                                <rect key="frame" x="50" y="44" width="314" height="818"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Fq4-DS-tZd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4ZE-d7-X1t"/>
-                            <constraint firstItem="Fq4-DS-tZd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="gbx-ga-cX6"/>
+                            <constraint firstItem="Tg0-2b-tvl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="6o8-jl-MCA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Tg0-2b-tvl" secondAttribute="bottom" id="Who-wM-dSR"/>
+                            <constraint firstItem="Tg0-2b-tvl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zhq-bK-5OX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tg0-2b-tvl" secondAttribute="trailing" constant="50" id="psI-JK-pcd"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +36,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="swipe-memo" width="1024" height="1024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
